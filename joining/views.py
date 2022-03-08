@@ -9,8 +9,8 @@ from django.contrib.auth.forms import PasswordChangeForm
 
 def JoinUs(request):
     if request.method == "POST":
-        return HttpResponse("Post Request Sent")
+        return HttpResponse("Post Request")
     else:
-        return HttpResponse("Get Request Sent")
+        return render(request, "Home.html")
 
 

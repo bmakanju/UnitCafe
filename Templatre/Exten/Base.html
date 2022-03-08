@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no" />
+    <meta name ="description" content ="Going Out not a must">
+  <meta name ="keywords" content ="E-Pin">
+  <meta name ="author" content ="Unit Cafe">
+    <!-- Site Metas -->
+    {% load static %}
+    <link rel="" href="{% static 'glyphicons-halflings-regular.svg' %}" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap/dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/font-awesome.min.css' %}">
+    <script src="{% static 'css/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/jquery/dist/jquery.min.js' %}"></script>
+    <link rel="shortcut icon" href="{% static '' %}" type="images/x-icon" />
+     <title>
+       {% block title %}{% endblock %}
+      </title>
+  </head>
+<body>
+  {% block content %}
+
+  {% endblock %}
+</body>
+</html>
