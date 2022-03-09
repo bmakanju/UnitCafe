@@ -35,19 +35,21 @@
     <div class="menu">
     <li><a href="">Home</a></li>
     <li><a href="">About</a></li>
+    <li><a href="">Menu</a></li>
+    <li><a href="">Contact</a></li>
     <li class="services">
-    <a href="">Services</a>
+    <a href="">Service &#9660;</a>
     <!-- DROPDOWN MENU -->
     <ul class="dropdown">
-    <li><a href="">Dropdown 1 </a></li>
-    <li><a href="">Dropdown 2</a></li>
-    <li><a href="">Dropdown 2</a></li>
-    <li><a href="">Dropdown 3</a></li>
-    <li><a href="">Dropdown 4</a></li>
+      <li><a class="" href="#">Buy E-Pin</a></li>
+      <li><a class="" href="#">Pay Nepa Bill</a></li>
+      <li><a class="" href="#">Make Payement</a></li>
+      <li><a class="" href="#">Weac Pin & Neco Pin</a></li>
+      <li><a class="" href="#">Decoder Subscription</a></li>
+      <hr class="dropdown-divider">
+      <li><a class="" href="#">Contact Us</a></li>
     </ul>
     </li>
-    <li><a href="">Pricing</a></li>
-    <li><a href="">Contact</a></li>
     </div>
     </ul>
     </nav>
@@ -70,13 +72,18 @@ li {
 /* NAVBAR STYLING STARTS */
 .navbar {
   display: flex;
-  position: fixed;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  background-color: teal;
+  background-color: black;
   color: #fff;
+  opacity: .7;
+  position: fixed;
 }
+.navbar:hover{
+  opacity: .8;
+}
+
 .nav-links a {
   color: #fff;
 }
@@ -93,7 +100,8 @@ li {
 .menu li:hover {
   background-color: darkkhaki;
   border-radius: 5px;
-  transition: 2s ease;
+  outline: thick solid #000;
+  transition: 1s ease;
 }
 .menu li {
   padding: 5px 14px;
@@ -116,6 +124,7 @@ li {
   display: none;
   border-radius: 8px;
   top: 3px;
+  width: 35em;
   margin-bottom: 10px;
 }
 .dropdown li + li {
@@ -123,16 +132,14 @@ li {
 }
 .dropdown li {
   padding: 0.5em 1em;
-  width: 8em;
   text-align: center;
+  width: 34em;
 }
-.dropdown li:hover {
-  background-color: darkkhaki;
-  transition: 2s ease;
-}
-.services:hover .dropdown {
+  
+ .services:hover .dropdown {
   transition: 3s;
   display: block;
+  opacity: 1;
 }
 /*RESPONSIVE NAVBAR MENU STARTS*/
 /* CHECKBOX HACK */
