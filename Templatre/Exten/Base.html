@@ -13,6 +13,7 @@
     {% load static %}
     <link rel="" href="{% static 'glyphicons-halflings-regular.svg' %}" />
     <link rel="stylesheet" href="{% static 'css/bootstrap/dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/three-dots/dist/three-dots.min.css' %}">
     <link rel="stylesheet" href="{% static '/css/font-awesome.min.css' %}">
     <script src="{% static 'css/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'js/jquery/dist/jquery.min.js' %}"></script>
@@ -22,64 +23,164 @@
       </title>
   </head>
 <body class="d-flex flex-column min-vh-100">
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light mb-5 "  style="background-color: rgb(231, 220, 220); user-select: none; height: 9em; opacity: .8;">
-    <div class="container-fluid">
-      <nav class="navbar navbar-light ">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            Unit Cafe
-          </a>
-        </div>
-      </nav>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="me-auto mb-2 mb-lg-0 nav nav-pills ">
-          <li class="nav-item">
-            <a class="nav-link active btn text-center" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Feature
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: cornflowerblue;">
-              <li><a class="dropdown-item" href="#">Buy E-Pin</a></li>
-              <li><a class="dropdown-item" href="#">Pay Nepa Bill</a></li>
-              <li><a class="dropdown-item" href="#">Make Payement</a></li>
-              <li><a class="dropdown-item" href="#">Weac Pin & Neco Pin</a></li>
-              <li><a class="dropdown-item" href="#">Decoder Subscription</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Contact Us</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">
-              Contact Us
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">
-              About Us
-            </a>
-          </li>
-          {% if user.is_authenticated %}
-          <li class="nav-item">
-            <a class="nav-link text-danger" href="#" tabindex="-1" aria-disabled="true">
-              Logout 
-            </a>
-          </li>
-          {% else %}
-          <li class="nav-item">
-            <a class="nav-link bg-dark btn btn-outline-light text-primary" href="#" tabindex="-1" aria-disabled="true">
-              Signup 
-            </a>
-          </li>
-          {% endif %}
-        </ul>
-      </div>
+  <nav class="navbar">
+    <!-- LOGO -->
+    <div class="logo">Unit Cafe</div>
+    <!-- NAVIGATION MENU -->
+    <ul class="nav-links">
+    <!-- USING CHECKBOX HACK -->
+    <input type="checkbox" id="checkbox_toggle" />
+    <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+    <!-- NAVIGATION MENUS -->
+    <div class="menu">
+    <li><a href="">Home</a></li>
+    <li><a href="">About</a></li>
+    <li class="services">
+    <a href="">Services</a>
+    <!-- DROPDOWN MENU -->
+    <ul class="dropdown">
+    <li><a href="">Dropdown 1 </a></li>
+    <li><a href="">Dropdown 2</a></li>
+    <li><a href="">Dropdown 2</a></li>
+    <li><a href="">Dropdown 3</a></li>
+    <li><a href="">Dropdown 4</a></li>
+    </ul>
+    </li>
+    <li><a href="">Pricing</a></li>
+    <li><a href="">Contact</a></li>
     </div>
-  </nav>
+    </ul>
+    </nav>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+}
+body {
+ font-family: cursive;
+}
+a {
+ text-decoration: none;
+}
+li {
+ list-style: none;
+}
+/* NAVBAR STYLING STARTS */
+.navbar {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: teal;
+  color: #fff;
+}
+.nav-links a {
+  color: #fff;
+}
+/* LOGO */
+.logo {
+  font-size: 32px;
+}
+/* NAVBAR MENU */
+.menu {
+  display: flex;
+  gap: 2em;
+  font-size: 18px;
+}
+.menu li:hover {
+  background-color: darkkhaki;
+  border-radius: 5px;
+  transition: 2s ease;
+}
+.menu li {
+  padding: 5px 14px;
+}
+.menu li a{
+  text-decoration: none
+}
+.menu li a:hover{
+  color: black;
+}
+/* DROPDOWN MENU */
+.services {
+  position: relative; 
+}
+.dropdown {
+  background-color: rgb(1, 139, 139);
+  padding: .5em ;
+  position: absolute; /*WITH RESPECT TO PARENT*/
+  z-index: 4;
+  display: none;
+  border-radius: 8px;
+  top: 3px;
+  margin-bottom: 10px;
+}
+.dropdown li + li {
+  margin-top: 10px;
+}
+.dropdown li {
+  padding: 0.5em 1em;
+  width: 8em;
+  text-align: center;
+}
+.dropdown li:hover {
+  background-color: darkkhaki;
+  transition: 2s ease;
+}
+.services:hover .dropdown {
+  transition: 3s;
+  display: block;
+}
+/*RESPONSIVE NAVBAR MENU STARTS*/
+/* CHECKBOX HACK */
+input[type=checkbox]{
+  display: none;
+} 
+/*HAMBURGER MENU*/
+.hamburger {
+  display: none;
+ font-size: 24px;
+ user-select: none;
+}
+/* APPLYING MEDIA QUERIES */
+@media (max-width: 768px) {
+  .menu { 
+    display:none;
+    position: absolute;
+    background-color:teal;
+    right: 0;
+    left: 0;
+    margin-top: 1em;
+    text-align: center;
+    padding: 16px 0;
+  }
+  .menu li:hover {
+    display: inline-block;
+    background-color: darkkhaki;
+    transition: 0.3s ease;
+  }
+  .menu li + li {
+ margin-top: 12px;
+}
+input[type=checkbox]:checked ~ .menu{
+  display: block;
+}
+.hamburger {
+ display: block;
+}
+.dropdown {
+  top: 5px;
+  left: -3.2em;
+  transform: translateX(35%);
+}
+.dropdown li:hover {
+  background-color: darkkhaki;
+}
+}
+</style>
 
   {% block content %}
 
@@ -87,9 +188,9 @@
 
   <!-- Remove the container if you want to extend the Footer to full width. -->
   <footer class="text-white text-center text-lg-start bg-primary">
-  <!-- Grid container -->
-  <div class="container p-4">
-    <!--Grid row-->
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!--Grid row-->
     <div class="row ">
       <!--Grid column-->
       <div class="col-lg-4 col-md-12 mb-4 mb-md-0" style="word-break: break-all;">
