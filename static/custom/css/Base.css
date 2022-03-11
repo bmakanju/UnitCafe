@@ -1,7 +1,15 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    /* Some custom styles to beautify this example */
+    .col-xl-4>p{
+      padding: 50px;
+      font-size: 32px;
+      font-weight: bold;
+      text-align: center;
+      background: #dbdfe5;
+  }
+  * {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 }
 body {
 font-family: cursive;
@@ -13,8 +21,8 @@ li {
 list-style: none;
 }
 /* carousel-item */
-img{
-  height: 200em;
+.carousel-item img{
+height: 800px;
 }
 /* NAVBAR STYLING STARTS */
 .navbar {
