@@ -12,6 +12,10 @@ text-decoration: none;
 li {
 list-style: none;
 }
+/* carousel-item */
+img{
+  height: 200em;
+}
 /* NAVBAR STYLING STARTS */
 .navbar {
 display: flex;
